@@ -1,0 +1,123 @@
+spring:
+  profiles.active: development
+
+---
+spring:
+  profiles: development
+  services:
+    bittrex-api:
+      markets: https://bittrex.com/api/v1.1/public/getmarkets
+      market-history: https://bittrex.com/api/v1.1/public/getmarkethistory?market=
+      order-book: https://bittrex.com/api/v1.1/public/getorderbook?&depth=1000&market=
+      sell: https://bittrex.com/api/v1.1/market/selllimit?apikey=
+      buy: https://bittrex.com/api/v1.1/market/buylimit?apikey=
+      balances: https://bittrex.com/api/v1.1/account/getbalances?apikey=
+      balance: https://bittrex.com/api/v1.1/account/getbalance?apikey=
+      order-cancel: https://bittrex.com/api/v1.1/market/cancel?apikey=
+      opened-orders: https://bittrex.com/api/v1.1/market/getopenorders?apikey=
+      get-order: https://bittrex.com/api/v1.1/account/getorder?uuid=
+      deposit-address: https://bittrex.com/api/v1.1/account/getdepositaddress?apikey=
+      withdraw: https://bittrex.com/api/v1.1/account/withdraw?apikey=
+      order-history: https://bittrex.com/api/v1.1/account/getorderhistory?apikey=
+      ticker: https://bittrex.com/api/v1.1/public/getmarketsummary?market=
+      withdraw-history: https://bittrex.com/api/v1.1/account/getwithdrawalhistory?apikey=
+      deposit-history: https://bittrex.com/api/v1.1/account/getdeposithistory?apikey=
+    cryptocompare-api:
+      minute-history: https://min-api.cryptocompare.com/data/histominute?limit=
+      hour-history: https://min-api.cryptocompare.com/data/histohour?limit=
+      day-history: https://min-api.cryptocompare.com/data/histoday?limit=
+    bitfinex-api:
+      base-url: https://api.bitfinex.com
+      markets: https://api.bitfinex.com/v1/symbols
+      market-history: https://api.bitfinex.com/v1/trades/
+      order-book: https://api.bitfinex.com/v1/book/
+      new-order: /v1/order/new
+      order-info: /v1/order/status
+      balances: /v1/balances
+      order-cancel: /v1/order/cancel
+      opened-orders: /v1/orders
+      deposit-address: /v1/deposit/new
+      withdraw: /v1/withdraw
+      order-history: /v1/orders/hist
+      ticker: https://api.bitfinex.com/v1/pubticker/
+      movements-history: /v1/history/movements
+    foxbit-api:
+      market-history: https://api.blinktrade.com/api/v1/BRL/trades?since=0&limit=100
+      order-book: https://api.blinktrade.com/api/v1/BRL/orderbook?crypto_currency=BTC
+      ticker: https://api.blinktrade.com/api/v1/BRL/ticker?crypto_currency=BTC
+      general: https://api.blinktrade.com/tapi/v1/message
+    okex-api:
+      markets: https://www.okex.com/v2/spot/markets/products
+      market-history: https://www.okex.com/api/v1/trades.do
+      order-book: https://www.okex.com/api/v1/depth.do
+      new-order: https://www.okex.com/api/v1/trade.do
+      balances: https://www.okex.com/api/v1/userinfo.do
+      order-cancel: https://www.okex.com/api/v1/cancel_order.do
+      get-order: https://www.okex.com/api/v1/order_info.do
+      order-history: https://www.okex.com/api/v1/order_history.do
+      withdraw: https://www.okcoin.cn/api/v1/withdraw.do
+      deposit-withdraw-history: https://www.okex.com/api/v1/account_records.do
+      ticker: https://www.okex.com/api/v1/ticker.do
+      transfer: https://www.okex.com/api/v1/funds_transfer.do
+server:
+  port: 8090
+---
+spring:
+  profiles: production
+  services:
+    bittrex-api:
+      markets: https://bittrex.com/api/v1.1/public/getmarkets
+      market-history: https://bittrex.com/api/v1.1/public/getmarkethistory?market=
+      order-book: https://bittrex.com/api/v1.1/public/getorderbook?&depth=1000&market=
+      sell: https://bittrex.com/api/v1.1/market/selllimit?apikey=
+      buy: https://bittrex.com/api/v1.1/market/buylimit?apikey=
+      balances: https://bittrex.com/api/v1.1/account/getbalances?apikey=
+      balance: https://bittrex.com/api/v1.1/account/getbalance?apikey=
+      order-cancel: https://bittrex.com/api/v1.1/market/cancel?apikey=
+      opened-orders: https://bittrex.com/api/v1.1/market/getopenorders?apikey=
+      get-order: https://bittrex.com/api/v1.1/account/getorder?uuid=
+      deposit-address: https://bittrex.com/api/v1.1/account/getdepositaddress?apikey=
+      withdraw: https://bittrex.com/api/v1.1/account/withdraw?apikey=
+      order-history: https://bittrex.com/api/v1.1/account/getorderhistory?apikey=
+      ticker: https://bittrex.com/api/v1.1/public/getmarketsummary?market=
+      withdraw-history: https://bittrex.com/api/v1.1/account/getwithdrawalhistory?apikey=
+      deposit-history: https://bittrex.com/api/v1.1/account/getdeposithistory?apikey=
+    cryptocompare-api:
+      minute-history: https://min-api.cryptocompare.com/data/histominute?limit=
+      hour-history: https://min-api.cryptocompare.com/data/histohour?limit=
+      day-history: https://min-api.cryptocompare.com/data/histoday?limit=
+    bitfinex-api:
+      base-url: https://api.bitfinex.com
+      markets: https://api.bitfinex.com/v1/symbols
+      market-history: https://api.bitfinex.com/v1/trades/
+      order-book: https://api.bitfinex.com/v1/book/
+      new-order: /v1/order/new
+      order-info: /v1/order/status
+      balances: /v1/balances
+      order-cancel: /v1/order/cancel
+      opened-orders: /v1/orders
+      deposit-address: /v1/deposit/new
+      withdraw: /v1/withdraw
+      order-history: /v1/orders/hist
+      ticker: https://api.bitfinex.com/v1/pubticker/
+      movements-history: /v1/history/movements
+    foxbit-api:
+      market-history: https://api.blinktrade.com/api/v1/BRL/trades?since=0&limit=100
+      order-book: https://api.blinktrade.com/api/v1/BRL/orderbook?crypto_currency=BTC
+      ticker: https://api.blinktrade.com/api/v1/BRL/ticker?crypto_currency=BTC
+      general: https://api.blinktrade.com/tapi/v1/message
+    okex-api:
+      markets: https://www.okex.com/v2/spot/markets/products
+      market-history: https://www.okex.com/api/v1/trades.do
+      order-book: https://www.okex.com/api/v1/depth.do
+      new-order: https://www.okex.com/api/v1/trade.do
+      balances: https://www.okex.com/api/v1/userinfo.do
+      order-cancel: https://www.okex.com/api/v1/cancel_order.do
+      get-order: https://www.okex.com/api/v1/order_info.do
+      order-history: https://www.okex.com/api/v1/order_history.do
+      withdraw: https://www.okcoin.cn/api/v1/withdraw.do
+      deposit-withdraw-history: https://www.okex.com/api/v1/account_records.do
+      ticker: https://www.okex.com/api/v1/ticker.do
+      transfer: https://www.okex.com/api/v1/funds_transfer.do
+server:
+  port: 9003
