@@ -1,0 +1,24 @@
+spring:
+  profiles.active: development
+
+---
+spring:
+  profiles: development
+  jpa:
+    hibernate:
+      ddl-auto:
+  datasource:
+    url: jdbc:mysql://localhost:3306/mali-core
+    username: root
+    password: root
+
+---
+spring:
+  profiles: production
+  jpa:
+    hibernate:
+      ddl-auto: create
+  datasource:
+    url: jdbc:mysql://localhost:3306/mali-core
+    username: root
+    password: root

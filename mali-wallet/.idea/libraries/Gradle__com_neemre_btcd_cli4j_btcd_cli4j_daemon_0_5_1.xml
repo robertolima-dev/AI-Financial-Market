@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.neemre.btcd-cli4j:btcd-cli4j-daemon:0.5.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.neemre.btcd-cli4j/btcd-cli4j-daemon/0.5.1/fac564e73fe76aaae27e00b39caa15960b519ead/btcd-cli4j-daemon-0.5.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.neemre.btcd-cli4j/btcd-cli4j-daemon/0.5.1/436cf158170e9d7adbdd04abd89013fa95976a6/btcd-cli4j-daemon-0.5.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
