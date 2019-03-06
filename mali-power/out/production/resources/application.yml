@@ -1,0 +1,35 @@
+spring:
+  profiles.active: development
+
+---
+spring:
+  profiles: development
+  jpa:
+    hibernate:
+      ddl-auto:
+  datasource:
+    url: jdbc:mysql://localhost:3306/mali-power
+    username: root
+    password: root
+mali-coin:
+  services:
+    list-coins-service: http://localhost:8080/coins
+    list-coin-history-by-idcoin-service: http://localhost:8080/coin-history/
+    list-coins-by-market-cap-service: http://localhost:8080/coins/market-cap-greater-than?marketcap=
+server:
+  port: 8081
+---
+spring:
+  profiles: production
+  jpa:
+    hibernate:
+      ddl-auto: create
+  datasource:
+    url: jdbc:mysql://localhost:3306/mali-power
+    username: root
+    password: root
+  mali-coin:
+    services:
+      list-coins-service: http://localhost:8080/coins
+      list-coins-by-market-cap-service: http://localhost:8080/coins/market-cap-greater-than
+      list-coin-history-by-idcoin-service: http://localhost:8080/coin-history/
