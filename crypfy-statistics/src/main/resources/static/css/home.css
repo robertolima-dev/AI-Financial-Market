@@ -1,0 +1,554 @@
+#portMenus ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  margin-top: 6%;
+}
+#portMenus li {
+  display: block;
+
+}
+#portMenus li a{
+    font-weight: bold;
+    font-size: 40px;
+}
+.lowerLi{
+    font-size: 18px;
+    text-align: center;
+    padding: 10px 30px;
+}
+.higherLi{
+    font-size: 30px;
+    text-align: left;
+    padding: 20px 30px;
+}
+.blocktop{
+    display: block;
+    float: top;
+    height: 50px;
+}
+.top{
+    float: left;
+    margin-top: 10px;
+    height: 100%;
+}
+a{
+    height: 24px;
+    width: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    text-decoration: none;
+    Color: #ffffff;
+}
+a.b4{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 30px;
+    padding: 3px;
+}
+
+//test
+* {
+	 box-sizing: border-box;
+}
+ nav {
+	 padding: 0px;
+}
+ nav ul {
+ float: right;
+ margin-right: 1%;
+}
+ nav ul li {
+	 display: inline-block;
+	 padding: 0px 15px;
+}
+ nav ul li:not(:first-child) {
+	 margin-left: 30px;
+}
+ nav ul li a {
+     font-family: 'Montserrat', sans-serif;
+     font-weight: 300;
+     font-size: 18px;
+     line-height: 24px;
+     text-align: center;
+     text-decoration: none;
+     Color: #ffffff;
+}
+@media screen and (max-width: 815px) {
+    .top{
+        margin-top: 15px;
+    }
+	 .nav-container {
+		 position: fixed;
+		 top: 0;
+		 left: 0;
+		 height: 100%;
+		 width: 100%;
+		 z-index: -1;
+		 background: rgba(65, 111, 186, 0.91);
+		 opacity: 0;
+		 transition: all 0.2s ease;
+	}
+	 .nav-container ul {
+		 position: absolute;
+		 top: 20%;
+		 transform: translateY(-50%);
+		 width: 100%;
+	}
+	 .nav-container ul li {
+		 display: block;
+		 float: none;
+		 width: 100%;
+		 text-align: right;
+		 margin-bottom: 10px;
+	}
+	 .nav-container ul li:nth-child(1) a {
+		 transition-delay: 0.2s;
+	}
+	 .nav-container ul li:nth-child(2) a {
+		 transition-delay: 0.3s;
+	}
+	 .nav-container ul li:nth-child(3) a {
+		 transition-delay: 0.4s;
+	}
+	 .nav-container ul li:nth-child(4) a {
+		 transition-delay: 0.5s;
+	}
+	 .nav-container ul li:not(:first-child) {
+		 margin-left: 0;
+	}
+	 .nav-container ul li a {
+		 padding: 10px 25px;
+		 opacity: 0;
+		 color: #fff;
+		 font-size: 24px;
+		 font-weight: 600;
+		 transform: translateY(-20px);
+		 transition: all 0.2s ease;
+		 margin-right:15%;
+	}
+	 .nav-open {
+		 position: fixed;
+		 right: 10px;
+		 top: 10px;
+		 display: block;
+		 width: 48px;
+		 height: 48px;
+		 cursor: pointer;
+		 z-index: 9999;
+		 border-radius: 50%;
+	}
+	 .nav-open i {
+		 display: block;
+		 width: 20px;
+		 height: 2px;
+		 background: #fff;
+		 border-radius: 2px;
+		 margin-left: 14px;
+	}
+	 .nav-open i:nth-child(1) {
+		 margin-top: 16px;
+	}
+	 .nav-open i:nth-child(2) {
+		 margin-top: 4px;
+		 opacity: 1;
+	}
+	 .nav-open i:nth-child(3) {
+		 margin-top: 4px;
+	}
+}
+ #nav:checked + .nav-open {
+	 transform: rotate(45deg);
+}
+ #nav:checked + .nav-open i {
+	 background: #fff;
+	 transition: transform 0.2s ease;
+}
+ #nav:checked + .nav-open i:nth-child(1) {
+	 transform: translateY(6px) rotate(180deg);
+}
+ #nav:checked + .nav-open i:nth-child(2) {
+	 opacity: 0;
+}
+ #nav:checked + .nav-open i:nth-child(3) {
+	 transform: translateY(-6px) rotate(90deg);
+}
+ #nav:checked ~ .nav-container {
+	 z-index: 9990;
+	 opacity: 1;
+}
+ #nav:checked ~ .nav-container ul li a {
+	 opacity: 1;
+	 transform: translateY(0);
+}
+ .hidden {
+	 display: none;
+}
+
+
+
+.button {
+  padding-top: 60px;
+}
+.button span {
+  position: absolute;
+  bottom: 20;
+  left: 50%;
+  width: 46px;
+  height: 46px;
+  margin-left: -23px;
+  border: 1px solid #fff;
+  border-radius: 100%;
+  box-sizing: border-box;
+}
+.button span::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  content: '';
+  width: 16px;
+  height: 16px;
+  margin: -12px 0 0 -8px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  box-sizing: border-box;
+}
+
+body{
+    margin: 0 auto;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #416fba;
+    height: 100%;
+    text-align: center;
+    width: 100%;
+}
+div.duo{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    height: 550px;
+    margin-top: 2%;
+    float: top;
+}
+div.secondDuo{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    height: 750px;
+    margin-top: 10%;
+    float: top;
+}
+div.thirdDuo{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    height: 1000px;
+    margin-top: 10%;
+    float: top;
+}
+div.upfront{
+    width : 100%;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    font-weight: 200;
+    text-align: center;
+    margin-top: 5%;
+}
+div.downfront{
+    margin-top: 8.5%;
+    margin-left: 23%;
+    width : 20%;
+    text-align: right;
+    float: left;
+}
+
+.big{
+    width: 100%;
+}
+.line{
+    float: left;
+    margin-left: 7%;
+    margin-top: 8%;
+    height: 150px;
+    border-left: thin solid #fff;
+}
+
+.portfolios{
+    float: left;
+    margin-top: 5.5%;
+    margin-left: 3%;
+}
+.flower{
+    margin-top: 3%;
+    margin-right: 2%;
+    min-height: 120px;
+    min-width: 200px;
+    max-width:100%;
+}
+.site{
+    margin-top: 10%;
+    margin-right: 2%;
+    min-height: 120px;
+    min-width: 200px;
+    max-width:100%;
+}
+.image{
+    float: right;
+    margin-top: 5%;
+    min-height: 120px;
+    min-width: 200px;
+    width : 100%;
+}
+.texto{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 250;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: left;
+    text-decoration: none;
+    Color: #ffffff;
+    width: 100%;
+    margin-top: 5%;
+    min-height: 50px;
+    min-width: 150px;
+    text-align: center;
+}
+.icon{
+    min-width: 50px;
+    float: left;
+    margin-left: 10%;
+}
+
+.secondText{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 250;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: left;
+    text-decoration: none;
+    Color: #ffffff;
+    width: 35%;
+    margin-top: 15%;
+    margin-left: 2%;
+    min-height: 50px;
+    min-width: 150px;
+    text-align: center;
+    float: left;
+}
+.secondFront{
+    font-size: 36px;
+}
+.secondDown{
+    margin-top: 10%;
+}
+.secondImagem{
+    height:100%;
+    float: right;
+    margin-right: 2%;
+}
+
+.thirdText{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 250;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: left;
+    text-decoration: none;
+    Color: #ffffff;
+    width: 100%;
+    margin-top: 4%;
+    min-height: 50px;
+    min-width: 150px;
+    text-align: center;
+}
+.thirdFront{
+    font-size: 36px;
+}
+.thirdImage{
+    margin-top: 0px;
+}
+
+@media only screen and (max-width: 1550px) {
+    div.secondDuo{
+        height: 800px;
+    }
+    .secondText{
+        width: 100%;
+        margin-top: 5%;
+        margin-left: 0px;
+        margin-right: 0px;
+        min-height: 50px;
+        min-width: 150px;
+        text-align: center;
+        float: none;
+    }
+    .secondFront{
+        font-size: 36px;
+    }
+    .secondDown{
+        margin-top: 3%;
+    }
+    .secondImagem{
+        text-align:center;
+        float: none;
+        margin-top: 1%;
+    }
+    .site{
+        float: none;
+        margin-top: 0;
+        margin-right: 0px;
+        margin-left: 1%;
+    }
+
+}
+
+@media only screen and (max-width: 1350px) {
+    .line{
+        height: 170px;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    .line{
+        height: 200px;
+    }
+    div.duo{
+        margin-top: 10%;
+    }
+}
+@media only screen and (max-width: 1130px) {
+    .line{
+        height: 220px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    div.downfront{
+        margin-top: 8.5%;
+        margin-left: 13%;
+        width : 30%;
+    }
+    .line{
+        height: 150px;
+    }
+}
+
+
+
+@media only screen and (max-width: 815px) {
+
+    .button{
+        display: none;
+    }
+
+    .portfolios{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    a.b4{
+        border-style: none;
+    }
+
+    div.duo{
+        height: 500px;
+    }
+
+    div.secondDuo{
+        height: 650px;
+        margin-top: 0px;
+    }
+
+    div.thirdDuo{
+        height: 500px;
+        margin-top: 0px;
+    }
+
+    thirdText{
+        margin-top: 0px;
+    }
+
+    .line{
+        height: 190px;
+    }
+
+
+}
+
+@media only screen and (max-width: 690px) {
+
+    .portfolios{
+        float: top;
+        margin-left:0%;
+        margin-right:0%;
+        width: 100%;
+        text-align: center;
+    }
+    div.upfront{
+        line-height: 60px;
+        margin-left:0%;
+        margin-right:0%;
+    }
+    div.downfront{
+        float: top;
+        width: 100%;
+        margin-left:0%;
+        margin-right:0%;
+        text-align: center;
+        margin-top: 0%;
+    }
+    .line{
+        float: none;
+        height: 0px;
+        width: 0px;
+        margin-left: 0px;
+    }
+    .texto{
+        text-align: center;
+        width: 100%;
+        margin-top: 5%;
+        min-height: 50px;
+        min-width: 150px;
+        margin-left:0%;
+        margin-right:0%;
+    }
+    .higherLi{
+        text-align: center;
+        padding: 10px 0px;
+    }
+    .lowerLi{
+        padding: 10px 0px;
+    }
+
+    div.secondFront{
+        line-height: 50px;
+        margin-top: 5%;
+    }
+    .secondDown{
+        margin-top: 5%;
+    }
+
+    .site{
+        margin-top: 3%;
+    }
+
+    .thirdFront{
+        line-height: 50px;
+        margin-top: 3%;
+    }
+
+    div.secondDuo{
+        height: 610px;
+    }
+
+}

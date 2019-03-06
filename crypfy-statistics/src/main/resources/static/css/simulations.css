@@ -1,0 +1,341 @@
+.icon{
+  min-height: 37px;
+  min-width: 112px;
+  float: left;
+  margin-left: 10%;
+}
+body{
+    margin: 0 auto;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #416fba;
+    height: 100%;
+    text-align: center;
+    width: 100%;
+}
+
+.blocktop{
+    display: block;
+    float: top;
+    height: 50px;
+}
+.top{
+    float: left;
+    margin-top: 10px;
+    height: 100%;
+}
+a{
+    height: 24px;
+    width: 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    text-decoration: none;
+    Color: #ffffff;
+}
+a.b4{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 30px;
+    padding: 3px;
+}
+
+//test
+* {
+	 box-sizing: border-box;
+}
+ nav {
+	 padding: 0px;
+}
+ nav ul {
+ float: right;
+ margin-right: 1%;
+}
+ nav ul li {
+	 display: inline-block;
+	 padding: 0px 15px;
+}
+ nav ul li:not(:first-child) {
+	 margin-left: 30px;
+}
+ nav ul li a {
+     font-family: 'Montserrat', sans-serif;
+     font-weight: 300;
+     font-size: 18px;
+     line-height: 24px;
+     text-align: center;
+     text-decoration: none;
+     Color: #ffffff;
+}
+@media screen and (max-width: 815px) {
+
+    a.b4{
+            border-style: none;
+        }
+    .top{
+        margin-top: 15px;
+    }
+	 .nav-container {
+		 position: fixed;
+		 top: 0;
+		 left: 0;
+		 height: 100%;
+		 width: 100%;
+		 z-index: -1;
+		 background: rgba(65, 111, 186, 0.91);
+		 opacity: 0;
+		 transition: all 0.2s ease;
+	}
+	 .nav-container ul {
+		 position: absolute;
+		 top: 20%;
+		 transform: translateY(-50%);
+		 width: 100%;
+	}
+	 .nav-container ul li {
+		 display: block;
+		 float: none;
+		 width: 100%;
+		 text-align: right;
+		 margin-bottom: 10px;
+	}
+	 .nav-container ul li:nth-child(1) a {
+		 transition-delay: 0.2s;
+	}
+	 .nav-container ul li:nth-child(2) a {
+		 transition-delay: 0.3s;
+	}
+	 .nav-container ul li:nth-child(3) a {
+		 transition-delay: 0.4s;
+	}
+	 .nav-container ul li:nth-child(4) a {
+		 transition-delay: 0.5s;
+	}
+	 .nav-container ul li:not(:first-child) {
+		 margin-left: 0;
+	}
+	 .nav-container ul li a {
+		 padding: 10px 25px;
+		 opacity: 0;
+		 color: #fff;
+		 font-size: 24px;
+		 font-weight: 600;
+		 transform: translateY(-20px);
+		 transition: all 0.2s ease;
+		 margin-right:15%;
+	}
+	 .nav-open {
+		 position: fixed;
+		 right: 10px;
+		 top: 10px;
+		 display: block;
+		 width: 48px;
+		 height: 48px;
+		 cursor: pointer;
+		 z-index: 9999;
+		 border-radius: 50%;
+	}
+	 .nav-open i {
+		 display: block;
+		 width: 20px;
+		 height: 2px;
+		 background: #fff;
+		 border-radius: 2px;
+		 margin-left: 14px;
+	}
+	 .nav-open i:nth-child(1) {
+		 margin-top: 16px;
+	}
+	 .nav-open i:nth-child(2) {
+		 margin-top: 4px;
+		 opacity: 1;
+	}
+	 .nav-open i:nth-child(3) {
+		 margin-top: 4px;
+	}
+}
+ #nav:checked + .nav-open {
+	 transform: rotate(45deg);
+}
+ #nav:checked + .nav-open i {
+	 background: #fff;
+	 transition: transform 0.2s ease;
+}
+ #nav:checked + .nav-open i:nth-child(1) {
+	 transform: translateY(6px) rotate(180deg);
+}
+ #nav:checked + .nav-open i:nth-child(2) {
+	 opacity: 0;
+}
+ #nav:checked + .nav-open i:nth-child(3) {
+	 transform: translateY(-6px) rotate(90deg);
+}
+ #nav:checked ~ .nav-container {
+	 z-index: 9990;
+	 opacity: 1;
+}
+ #nav:checked ~ .nav-container ul li a {
+	 opacity: 1;
+	 transform: translateY(0);
+}
+ .hidden {
+	 display: none;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 20px;
+    border-radius: 5px;
+    background: #ffffff;
+    outline: none;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 40px;
+    border-radius: 40%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 15px;
+    height: 25px;
+    border-radius: 40%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+.principal{
+    display: block;
+    margin-top: 0%;
+    height: 100%;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+    color: #ffffff;
+    text-align: center;
+    float: top;
+}
+.secondary{
+    display: block;
+    margin-top: 5%;
+    height: 100%;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+}
+.slidecontainer {
+    margin-top: 7%;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+}
+.slider{
+    margin-left:50%;
+}
+.text{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+    color: #ffffff;
+    margin-top: 2%;
+}
+.charter{
+    position: absolute;
+    margin: auto;
+    right: 0;
+    left: 0;
+    width: 500px;
+    height: 400px;
+    text-align: center;
+
+}
+.duo{
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    text-align: center;
+}
+#menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#menu li {
+  display: inline-block;
+}
+.big1{
+    text-align: center;
+}
+.textlist{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #ffffff;
+}
+.span{
+ color: white;
+ font-weight: bold;
+ font-size: 28px;
+}
+#menu li p{
+    padding: 1px 25px;
+}
+.intro{
+    margin-top: 7%;
+}
+
+.box{
+    display: block;
+    height: 200px;
+    width: 60%;
+    text-align: center;
+    margin-left: 20%;
+    margin-top: 3%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #fff;
+    float: left;
+}
+.listBlock{
+    margin-top: 4%;
+    margin-left: 20%;
+    float: left;
+    text-align: left;
+}
+.form-group{
+    height: 50px;
+    text-align: center;
+    float: left;
+    margin-top: 15%;
+}
+.box input{
+    height: 50px;
+    width: 400px;
+    position: absolute;
+    margin: auto;
+    top:0;
+    bottom: 0;
+    left:0;
+    right:0;
+}
+.box a{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 30px;
+    padding: 3px;
+}

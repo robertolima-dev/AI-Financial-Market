@@ -1,0 +1,126 @@
+<html>
+<head>
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    <title>Crypfy - Data Master</title>
+</head>
+<body class="body">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet"></link>
+<link rel="stylesheet" href="../../css/data.css"></link>
+<div class="topContent">
+
+    <div class="imgContent">
+        <a href="../../" ><img width="135" height="45" class="icon" src="https://i.gyazo.com/a7c3dc107d893652c2bcf5164cca0386.png"/></a>
+    </div>
+
+    <div class="navContent">
+        <span class="nav" id="tradingview-nav"></span>
+        <script src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js">{
+        "symbols": [
+          {
+            "description": "Bitcoin/Real",
+            "proName": "MERCADO:BTCBRL"
+          },
+          {
+            "description": "Bitcoin/Dollar",
+            "proName": "COINBASE:BTCUSD"
+          },
+          {
+            "description": "Ethereum/Dollar",
+            "proName": "COINBASE:ETHUSD"
+          },
+          {
+            "description": "Ripple/Dollar",
+            "proName": "BITSTAMP:XRPUSD"
+          },
+          {
+            "description": "Litecoin/Dollar",
+            "proName": "COINBASE:LTCUSD"
+          },
+          {
+            "description": "Dash/Dollar",
+            "proName": "KRAKEN:DASHUSD"
+          }
+        ],
+        "locale": "en"
+      }
+      </script>
+    </div>
+</div>
+
+<div class="portfolios">
+
+    <div class="intro">
+        <p>Portfólios Inteligentes</p>
+    </div>
+
+    <div class="results" id="menu">
+        <ul>
+            <li>Línea mês atual: <a class="b1"><span id="linea"></span></a></li>
+            <li>Audace mês atual: <a class="b2"><span id="audace"></span></a></li>
+        </ul>
+    </div>
+
+</div>
+
+
+<div class="content">
+
+    <div class="table">
+
+        <div class="title">
+            <p>Dados Globais do Mercado</p>
+        </div>
+
+        <span id="tradingview-table"></span>
+        <script src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js">{
+        "width": "100%",
+        "height": "100%",
+        "defaultColumn": "overview",
+        "screener_type": "crypto_mkt",
+        "displayCurrency": "USD",
+        "locale": "en"
+      }</script>
+    </div>
+
+    <div class="graph">
+        <div class="title">
+            <p>Gráfico de cotações BTC/BRL</p>
+        </div>
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <script type="text/javascript">
+      new TradingView.widget({
+        "autosize": true,
+        "symbol": "FOXBIT:BTCBRL",
+        "interval": "D",
+        "timezone": "America/Sao_Paulo",
+        "theme": "Light",
+        "style": "1",
+        "locale": "en",
+        "toolbar_bg": "rgba(238, 238, 238, 1)",
+        "enable_publishing": false,
+        "allow_symbol_change": true,
+        "hideideas": true,
+        "studies": [
+          "MASimple@tv-basicstudies",
+          "RSI@tv-basicstudies"
+        ]
+      });
+      </script>
+    </div>
+
+</div>
+
+</body>
+
+<script src="../../js/data.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>$("a[ref='nofollow noopener']").hide()</script>
+
+<script>
+  setTimeout(1000,function(){
+    $('.tv-embed-widget-wrapper__logo-link').css('display','none');
+  })
+  setTimeout(function() {$('.tv-embed-widget-wrapper__logo-link').hide();},1000);
+</script>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet"></link>
+    <link rel="stylesheet" href="../../css/home.css"></link>
+    <title>Crypfy</title>
+</head>
+<body>
+    <div class="blocktop">
+        <div class="top">
+            <a href="../../" ><img width="110"  class="icon" src="../../images/logo-top.svg"/></a>
+        </div>
+        <nav>
+            <input type="checkbox" id="nav" class="hidden"/>
+            <label for="nav" class="nav-open"><i></i><i></i><i></i></label>
+            <div class="nav-container">
+                <ul>
+                    <li><a href="../../stats">Resultados</a></li>
+                    <li><a href="../../projections">Projeções</a></li>
+                    <li><a href="http://crypfy.com/" target="_blank" class="b4">Login App</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div  id="particles-js" style="position: fixed; width:100%; height:100%;"></div>
+
+    <div>
+
+        <div class="duo">
+            <div class="texto">
+                <div class="upfront">Portfólios Inteligentes</div>
+                <div class="big">
+                    <div class="downfront">Uma I.A (inteligência artificial) totalmente dedicada a criação e manutenção de portfólios, varrendo dados de milhares de criptoativos e, tomando decisões em tempo real...</div>
+                    <div class="line"></div>
+                    <div class="portfolios" id="portMenus">
+                        <ul>
+                            <li class="higherLi">Linea   <a> 0,52%</a></li>
+                            <li class="higherLi">Audace   <a> 1,29%</a></li>
+                            <li class="higherLi">Cadenza   <a> 4,15%</a></li>
+                            <li class="lowerLi">(mês atual)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a class="button" href="#section1"><span></span><span></span><span></span></a>
+
+        <div id="section1" class="secondDuo">
+            <div class="secondText">
+                <div class="secondFront">Desempenho sem igual</div>
+                <div class="secondDown">Identificando os períodos de subida e descida do mercado, potencializando seus ganhos e minimizando suas perdas; Crie agora sua conta gratuitamente e deixe seus criptoativos nas mãos de quem gerou mais de 5000% de rendimento no ano de 2017</div>
+            </div>
+            <div class="secondImagem">
+                <img width="900" class= "site" src="../../images/site.png"/>
+            </div>
+        </div>
+
+        <a class="button" href="#section2"><span></span><span></span><span></span></a>
+
+        <div id="section2" class="thirdDuo">
+            <div class="thirdText">
+                <div class="thirdFront">Características da plataforma</div>
+            </div>
+            <div class="thirdImagem">
+                <img width="1200"  class= "flower" src="../../images/site-func.png"/>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../../js/particles.js"></script>
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+    <script>
+        //<![CDATA[
+        particlesJS("particles-js", {"particles":{"number":{"value":80,"density":{"enable":true,"value_area":800}},"color":{"value":"#c6c6c6"},"shape":{"type":"circle","stroke":{"width":0,"color":"#c6c6c6"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.5,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#c6c6c6","opacity":0.4,"width":1},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});var count_particles, stats, update; document.body.appendChild(stats.domElement); count_particles = document.querySelector('.js-count-particles'); update = function() { stats.begin(); stats.end(); if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) { count_particles.innerText = window.pJSDom[0].pJS.particles.array.length; } requestAnimationFrame(update); }; requestAnimationFrame(update);;
+        //]]>
+    </script>
+    <script></script>
+</body>
+</html>
