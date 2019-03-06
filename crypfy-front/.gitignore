@@ -1,0 +1,25 @@
+# IDEA
+# ----
+.idea
+.shelf
+/*.iml
+/*.ipr
+/*.iws
+/buildSrc/*.iml
+/buildSrc/*.ipr
+/buildSrc/*.iws
+/buildSrc/out
+/out
+/subprojects/*/*.iml
+/subprojects/*/out
+/.teamcity/*.iml
+/.teamcity/target
+
+node_modules
+build
+npm-debug.log
+.env
+.DS_Store
+babel_cache
+src/static/js/renderer-bundle.js
+Dockerfile

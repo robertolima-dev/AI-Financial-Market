@@ -1,0 +1,5 @@
+#ignore files
+babel_cache
+node_modules
+.idea
+.gitignore
