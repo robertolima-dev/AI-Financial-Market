@@ -1,0 +1,113 @@
+spring:
+  profiles.active: development
+
+---
+spring:
+  profiles: development
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/crypfy-auth
+    username: root
+    password:
+  kafka:
+    bootstrap-servers: localhost:9092,localhost:9093,localhost:9094
+    consumer:
+      group-id: auth-add-brl-balance
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+  aws:
+    ses:
+      access-key: AKIAJSMMPWLWGUDAGZEQ
+      secret-key: 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
+  crypfy:
+    queue:
+      topics:
+        auth-add-brl-balance: auth-add-brl-balance
+        auth-updated-brl-balance: auth-updated-brl-balance
+    services:
+      email-confirmation-resource: http://localhost:9000/email-confirmation?token=
+    email:
+      no-reply-email: no-reply@crypfy.com
+  slack:
+    webhook: https://hooks.slack.com/services/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
+server:
+  port: 8081
+
+---
+spring:
+  profiles: test
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:mysql://internal-crypfy-database-balancer-1991109529.sa-east-1.elb.amazonaws.com
+    username: root
+    password: 190650
+  kafka:
+    bootstrap-servers: localhost:9092,localhost:9093,localhost:9094
+    consumer:
+      group-id: auth-add-brl-balance
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+  aws:
+    ses:
+      access-key: AKIAJSMMPWLWGUDAGZEQ
+      secret-key: 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
+  crypfy:
+    queue:
+      topics:
+        auth-add-brl-balance: auth-add-brl-balance
+        auth-updated-brl-balance: auth-updated-brl-balance
+    services:
+      email-confirmation-resource: http://testing.crypfy.com/email-confirmation?token=
+    email:
+      no-reply-email: no-reply@crypfy.com
+  slack:
+    webhook: https://hooks.slack.com/services/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
+server:
+  port: 8081
+
+---
+spring:
+  profiles: production
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:mysql://172.31.24.197/crypfy-auth
+    username: crypfy
+    password: 190650
+  kafka:
+    bootstrap-servers: 172.31.24.197:9092,172.31.24.197:9093,172.31.24.197:9094
+    consumer:
+      group-id: auth-add-brl-balance
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+  aws:
+    ses:
+      access-key: AKIAJSMMPWLWGUDAGZEQ
+      secret-key: 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
+  crypfy:
+    queue:
+      topics:
+        auth-add-brl-balance: auth-add-brl-balance
+        auth-updated-brl-balance: auth-updated-brl-balance
+    services:
+      email-confirmation-resource: https://app.crypfy.com/email-confirmation?token=
+    email:
+      no-reply-email: no-reply@crypfy.com
+  slack:
+    webhook: https://hooks.slack.com/services/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
+server:
+  port: 8081
