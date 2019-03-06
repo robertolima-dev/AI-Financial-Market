@@ -1,0 +1,57 @@
+spring:
+  profiles.active: development
+
+---
+spring:
+  profiles: development
+  data:
+    mongodb:
+      database: elastic-trader-db
+      uri: mongodb://localhost:27017
+  services:
+    mali-coin-data:
+      coins: https://coin-data.crypfy.com/coins?sort=cap,desc&limit=
+      coin-history: https://coin-data.crypfy.com/candles?coinId={coinName}&timeFrame={timeFrame}&sort=date,desc&limit=
+    exchanger-wrapper:
+      markets: http://localhost:8090/exchangers/{exchangeName}/markets
+      total-balance: http://localhost:8090/exchangers/{exchangeName}/total-balance/{baseCurrency}
+      new-order: http://localhost:8090/exchangers/{exchangeName}/market/{marketName}/new-order
+      order-check: http://localhost:8090/exchangers/{exchangeName}/market/{marketName}/order-check
+      cancel-order: http://localhost:8090/exchangers/{exchangeName}/order-cancel
+      balances: http://localhost:8090/exchangers/{exchangeName}/balances
+      balance: http://localhost:8090/exchangers/{exchangeName}/balance/
+      deal-price: http://localhost:8090/exchangers/{exchangeName}/market/{marketName}/deal-price
+      ticker: http://localhost:8090/exchangers/{exchangeName}/market/{marketName}/ticker
+    cluster:
+      check-and-save: http://localhost:8088/clusters/patterns
+    crypto-indexes:
+      last-update: http://localhost:8092/index/asset/{asset}/source/{source}/last-update
+server:
+  port: 8089
+---
+spring:
+  profiles: production
+  data:
+    mongodb:
+      database: elastic-trader-db
+      uri: mongodb://172.31.24.197:27017
+  services:
+    mali-coin-data:
+      coins: https://coin-data.crypfy.com/coins?sort=cap,desc&limit=
+      coin-history: https://coin-data.crypfy.com/candles?coinId={coinName}&timeFrame={timeFrame}&sort=date,desc&limit=
+    exchanger-wrapper:
+      markets: http://internal-exchange-wrapper-balancer-1635908382.sa-east-1.elb.amazonaws.com/exchangers/{exchangeName}/markets
+      total-balance: http://internal-exchange-wrapper-balancer-1635908382.sa-east-1.elb.amazonaws.com/exchangers/{exchangeName}/total-balance/{baseCurrency}
+      new-order: http://internal-exchange-wrapper-balancer-1635908382.sa-east-1.elb.amazonaws.com/exchangers/{exchangeName}/market/{marketName}/new-order
+      order-check: http://internal-exchange-wrapper-balancer-1635908382.sa-east-1.elb.amazonaws.com/exchangers/{exchangeName}/market/{marketName}/order-check
+      cancel-order: http://internal-exchange-wrapper-balancer-1635908382.sa-east-1.elb.amazonaws.com/exchangers/{exchangeName}/order-cancel
+      balances: http://internal-exchange-wrapper-balancer-1635908382.sa-east-1.elb.amazonaws.com/exchangers/{exchangeName}/balances
+      balance: http://internal-exchange-wrapper-balancer-1635908382.sa-east-1.elb.amazonaws.com/exchangers/{exchangeName}/balance/
+      deal-price: http://internal-exchange-wrapper-balancer-1635908382.sa-east-1.elb.amazonaws.com/exchangers/{exchangeName}/market/{marketName}/deal-price
+      ticker: http://internal-exchange-wrapper-balancer-1635908382.sa-east-1.elb.amazonaws.com/exchangers/{exchangeName}/market/{marketName}/ticker
+    cluster:
+      check-and-save: http://localhost:8088/clusters/patterns
+    crypto-indexes:
+      last-update: http://localhost:8092/index/asset/{asset}/source/{source}/last-update
+server:
+  port: 9002
