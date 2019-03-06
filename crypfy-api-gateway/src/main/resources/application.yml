@@ -1,0 +1,186 @@
+spring:
+  profiles.active: development
+
+---
+spring:
+  profiles: development
+  http:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  aws:
+    s3:
+      access-key: AKIAJSMMPWLWGUDAGZEQ
+      secret-key: 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
+      temp-local: /tmp/crypfy
+      bucket-name: static.dev.crypfy
+      folder-deposit-voucher-upload: deposit-voucher-upload/
+      folder-identity-verification-upload: identity-verification-upload/
+      folder-document-verification-upload: document-verification-upload/
+      folder-avatar-upload: avatar-upload/
+      folder-avatar-upload-tmp: avatar-upload-tmp/
+  services:
+    user:
+      login: http://localhost:8081/login
+      signup: http://localhost:8081/users
+      email-confirmation: http://localhost:8081/email-confirmation
+      resend-email-confirmation: http://localhost:8081/users/{email}/resend-email-confirmation
+      redefine-password: http://localhost:8081/users/{email}/redefine-password
+      get-info: http://localhost:8081/users/{email}
+      update-profile: http://localhost:8081/users/{email}
+      update-avatar: http://localhost:8081/users/{email}/update-avatar
+      change-identity-verification-status-to-waiting-approval: http://localhost:8081/users/{email}/change-identity-verification-status-to-waiting-approval
+      change-document-verification-status-to-waiting-approval: http://localhost:8081/users/{email}/change-document-verification-status-to-waiting-approval
+      change-identity-verification-status-to-verified: http://localhost:8081/users/{email}/change-identity-verification-status-to-verified
+      change-document-verification-status-to-verified: http://localhost:8081/users/{email}/change-document-verification-status-to-verified
+      change-identity-verification-status-to-denied: http://localhost:8081/users/{email}/change-identity-verification-status-to-denied
+      change-document-verification-status-to-denied: http://localhost:8081/users/{email}/change-document-verification-status-to-denied
+      list: http://localhost:8081/users
+    admin-user:
+      login: http://localhost:8086/login
+    moneymanager:
+      deposit:
+        add: http://localhost:8084/deposits
+        change-status-to-waiting-approval: http://localhost:8084/deposits/{id}/{email}/change-status-to-waiting-approval
+        change-status-to-confirmed: http://localhost:8084/deposits/{id}/change-status-to-confirmed
+        change-status-to-denied: http://localhost:8084/deposits/{id}/change-status-to-denied
+        change-status-to-cancelled: http://localhost:8084/deposits/{id}/{email}/change-status-to-cancelled
+        list: http://localhost:8084/deposits
+        done-sum-amount: http://localhost:8084/deposits/done-sum-amount?email=
+        count: http://localhost:8084/deposits/count
+        delete: http://localhost:8084/deposits/{id}/{email}
+      withdraw:
+        add: http://localhost:8084/withdraws
+        change-status-to-processing: http://localhost:8084/withdraws/{id}/change-status-to-processing
+        change-status-to-confirmed: http://localhost:8084/withdraws/{id}/change-status-to-confirmed
+        change-status-to-denied: http://localhost:8084/withdraws/{id}/change-status-to-denied
+        change-status-to-cancelled: http://localhost:8084/withdraws/{id}/{email}/change-status-to-cancelled
+        list: http://localhost:8084/withdraws
+        done-sum-amount: http://localhost:8084/withdraws/done-sum-amount?email=
+        count: http://localhost:8084/withdraws/count
+        delete: http://localhost:8084/withdraws/{id}/{email}
+      bank-account:
+        list: http://localhost:8084/bank-accounts?email=
+        find: http://localhost:8084/bank-accounts/{id}
+        add: http://localhost:8084/bank-accounts
+        update: http://localhost:8084/bank-accounts/{id}
+        delete: http://localhost:8084/bank-accounts/{id}
+      bank:
+        list: http://localhost:8084/banks
+    indexmanager:
+      plan:
+        add: http://localhost:8085/plans
+        list: http://localhost:8085/plans
+        list-in-progress: http://localhost:8085/plans/in-progress?email=
+        all-evolution-per-point: http://localhost:8085/plans/all-evolution-per-point?email=
+        total-profit: http://localhost:8085/plans/total-profit?email=
+        count-all: http://localhost:8085/plans/count-all?email=
+        perfomance-year: http://localhost:8085/plans/{id}/perfomance-by-year
+        statistics: http://localhost:8085/plans/statistics
+        change-status-to-in-progress: http://localhost:8085/plans/{iduserPlan}/change-status-to-in-progress
+      index:
+        list: http://localhost:8085/indexes?idplan=
+        perfomance-by-date: http://localhost:8085/indexes/performance-by-date
+        find-first-by-date: http://localhost:8085/indexes/first-index-by-date
+      plan-take-profit-request:
+        add: http://localhost:8085/plan-take-profit-requests
+        list: http://localhost:8085/plan-take-profit-requests
+        change-status-to-cancelled: http://localhost:8085/plan-take-profit-requests/{id}/{email}/change-status-to-cancelled
+        change-status-to-failed: http://localhost:8085/plan-take-profit-requests/{id}/change-status-to-failed
+        change-status-to-processing: http://localhost:8085/plan-take-profit-requests/{email}/change-status-to-processing
+        change-status-to-confirmed: http://localhost:8085/plan-take-profit-requests/{email}/change-status-to-confirmed
+        delete: http://localhost:8085/plan-take-profit-requests/{id}
+server:
+  port: 8083
+
+---
+spring:
+  profiles: production
+  http:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  aws:
+    s3:
+      access-key: AKIAJSMMPWLWGUDAGZEQ
+      secret-key: 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
+      temp-local: /tmp/crypfy/
+      bucket-name: static.crypfy
+      folder-deposit-voucher-upload: deposit-voucher-upload/
+      folder-identity-verification-upload: identity-verification-upload/
+      folder-document-verification-upload: document-verification-upload/
+      folder-avatar-upload: avatar-upload/
+      folder-avatar-upload-tmp: avatar-upload-tmp/
+  services:
+    user:
+      login: http://internal-crypfy-auth-balancer-1389197829.sa-east-1.elb.amazonaws.com/login
+      signup: http://internal-crypfy-auth-balancer-1389197829.sa-east-1.elb.amazonaws.com/users
+      email-confirmation: http://internal-crypfy-auth-balancer-1389197829.sa-east-1.elb.amazonaws.com/email-confirmation
+      resend-email-confirmation: http://internal-crypfy-auth-balancer-1389197829.sa-east-1.elb.amazonaws.com/users/{email}/resend-email-confirmation
+      redefine-password: http://internal-crypfy-auth-balancer-1389197829.sa-east-1.elb.amazonaws.com/users/{email}/redefine-password
+      get-info: http://internal-crypfy-auth-balancer-1389197829.sa-east-1.elb.amazonaws.com/users/{email}
+      update-profile: http://internal-crypfy-auth-balancer-1389197829.sa-east-1.elb.amazonaws.com/users/{email}
+      update-avatar: http://internal-crypfy-auth-balancer-1389197829.sa-east-1.elb.amazonaws.com/users/{email}/update-avatar
+      change-identity-verification-status-to-waiting-approval: http://internal-crypfy-auth-balancer-1389197829.sa-east-1.elb.amazonaws.com/users/{email}/change-identity-verification-status-to-waiting-approval
+      change-document-verification-status-to-waiting-approval: http://internal-crypfy-auth-balancer-1389197829.sa-east-1.elb.amazonaws.com/users/{email}/change-document-verification-status-to-waiting-approval
+      change-identity-verification-status-to-verified: http://internal-crypfy-auth-balancer-1389197829.sa-east-1.elb.amazonaws.com/users/{email}/change-identity-verification-status-to-verified
+      change-document-verification-status-to-verified: http://internal-crypfy-auth-balancer-1389197829.sa-east-1.elb.amazonaws.com/users/{email}/change-document-verification-status-to-verified
+      change-identity-verification-status-to-denied: http://internal-crypfy-auth-balancer-1389197829.sa-east-1.elb.amazonaws.com/users/{email}/change-identity-verification-status-to-denied
+      change-document-verification-status-to-denied: http://internal-crypfy-auth-balancer-1389197829.sa-east-1.elb.amazonaws.com/users/{email}/change-document-verification-status-to-denied
+      list: http://internal-crypfy-auth-balancer-1389197829.sa-east-1.elb.amazonaws.com/users
+    admin-user:
+      login: http://internal-crypfy-auth-balancer-1389197829.sa-east-1.elb.amazonaws.com/login
+    moneymanager:
+      deposit:
+        add: http://internal-crypfy-moneymanager-balancer-22096099.sa-east-1.elb.amazonaws.com/deposits
+        change-status-to-waiting-approval: http://internal-crypfy-moneymanager-balancer-22096099.sa-east-1.elb.amazonaws.com/deposits/{id}/{email}/change-status-to-waiting-approval
+        change-status-to-confirmed: http://internal-crypfy-moneymanager-balancer-22096099.sa-east-1.elb.amazonaws.com/deposits/{id}/change-status-to-confirmed
+        change-status-to-denied: http://internal-crypfy-moneymanager-balancer-22096099.sa-east-1.elb.amazonaws.com/deposits/{id}/change-status-to-denied
+        change-status-to-cancelled: http://internal-crypfy-moneymanager-balancer-22096099.sa-east-1.elb.amazonaws.com/deposits/{id}/{email}/change-status-to-cancelled
+        list: http://internal-crypfy-moneymanager-balancer-22096099.sa-east-1.elb.amazonaws.com/deposits
+        done-sum-amount: http://internal-crypfy-moneymanager-balancer-22096099.sa-east-1.elb.amazonaws.com/deposits/done-sum-amount?email=
+        count: http://internal-crypfy-moneymanager-balancer-22096099.sa-east-1.elb.amazonaws.com/deposits/count
+        delete: http://internal-crypfy-moneymanager-balancer-22096099.sa-east-1.elb.amazonaws.com/deposits/{id}/{email}
+      withdraw:
+        add: http://internal-crypfy-moneymanager-balancer-22096099.sa-east-1.elb.amazonaws.com/withdraws
+        change-status-to-processing: http://internal-crypfy-moneymanager-balancer-22096099.sa-east-1.elb.amazonaws.com/withdraws/{id}/change-status-to-processing
+        change-status-to-confirmed: http://internal-crypfy-moneymanager-balancer-22096099.sa-east-1.elb.amazonaws.com/withdraws/{id}/change-status-to-confirmed
+        change-status-to-denied: http://internal-crypfy-moneymanager-balancer-22096099.sa-east-1.elb.amazonaws.com/withdraws/{id}/change-status-to-denied
+        change-status-to-cancelled: http://internal-crypfy-moneymanager-balancer-22096099.sa-east-1.elb.amazonaws.com/withdraws/{id}/{email}/change-status-to-cancelled
+        list: http://internal-crypfy-moneymanager-balancer-22096099.sa-east-1.elb.amazonaws.com/withdraws
+        done-sum-amount: http://internal-crypfy-moneymanager-balancer-22096099.sa-east-1.elb.amazonaws.com/withdraws/done-sum-amount?email=
+        count: http://internal-crypfy-moneymanager-balancer-22096099.sa-east-1.elb.amazonaws.com/withdraws/count
+        delete: http://internal-crypfy-moneymanager-balancer-22096099.sa-east-1.elb.amazonaws.com/withdraws/{id}/{email}
+      bank-account:
+        list: http://internal-crypfy-moneymanager-balancer-22096099.sa-east-1.elb.amazonaws.com/bank-accounts?email=
+        find: http://internal-crypfy-moneymanager-balancer-22096099.sa-east-1.elb.amazonaws.com/bank-accounts/{id}
+        add: http://internal-crypfy-moneymanager-balancer-22096099.sa-east-1.elb.amazonaws.com/bank-accounts
+        update: http://internal-crypfy-moneymanager-balancer-22096099.sa-east-1.elb.amazonaws.com/bank-accounts/{id}
+        delete: http://internal-crypfy-moneymanager-balancer-22096099.sa-east-1.elb.amazonaws.com/bank-accounts/{id}
+      bank:
+        list: http://internal-crypfy-moneymanager-balancer-22096099.sa-east-1.elb.amazonaws.com/banks
+    indexmanager:
+      plan:
+        add: http://internal-crypfy-indexmanager-balancer-1458728164.sa-east-1.elb.amazonaws.com/plans
+        list: http://internal-crypfy-indexmanager-balancer-1458728164.sa-east-1.elb.amazonaws.com/plans
+        list-in-progress: http://internal-crypfy-indexmanager-balancer-1458728164.sa-east-1.elb.amazonaws.com/plans/in-progress?email=
+        all-evolution-per-point: http://internal-crypfy-indexmanager-balancer-1458728164.sa-east-1.elb.amazonaws.com/plans/all-evolution-per-point?email=
+        total-profit: http://internal-crypfy-indexmanager-balancer-1458728164.sa-east-1.elb.amazonaws.com/plans/total-profit?email=
+        count-all: http://internal-crypfy-indexmanager-balancer-1458728164.sa-east-1.elb.amazonaws.com/plans/count-all?email=
+        perfomance-year: http://internal-crypfy-indexmanager-balancer-1458728164.sa-east-1.elb.amazonaws.com/plans/{id}/perfomance-by-year
+        statistics: http://internal-crypfy-indexmanager-balancer-1458728164.sa-east-1.elb.amazonaws.com/admin/plans/statistics
+        change-status-to-in-progress: http://internal-crypfy-indexmanager-balancer-1458728164.sa-east-1.elb.amazonaws.com/plans/{iduserPlan}/change-status-to-in-progress
+      index:
+        list: http://internal-crypfy-indexmanager-balancer-1458728164.sa-east-1.elb.amazonaws.com/indexes?idplan=
+        perfomance-by-date: http://internal-crypfy-indexmanager-balancer-1458728164.sa-east-1.elb.amazonaws.com/indexes/performance-by-date
+        find-first-by-date: http://internal-crypfy-indexmanager-balancer-1458728164.sa-east-1.elb.amazonaws.com/indexes/first-index-by-date
+      plan-take-profit-request:
+        add: http://internal-crypfy-indexmanager-balancer-1458728164.sa-east-1.elb.amazonaws.com/plan-take-profit-requests
+        list: http://internal-crypfy-indexmanager-balancer-1458728164.sa-east-1.elb.amazonaws.com/plan-take-profit-requests
+        change-status-to-cancelled: http://internal-crypfy-indexmanager-balancer-1458728164.sa-east-1.elb.amazonaws.com/plan-take-profit-requests/{id}/{email}/change-status-to-cancelled
+        change-status-to-failed: http://internal-crypfy-indexmanager-balancer-1458728164.sa-east-1.elb.amazonaws.com/plan-take-profit-requests/{id}/change-status-to-failed
+        change-status-to-processing: http://internal-crypfy-indexmanager-balancer-1458728164.sa-east-1.elb.amazonaws.com/plan-take-profit-requests/{id}/change-status-to-processing
+        change-status-to-confirmed: http://internal-crypfy-indexmanager-balancer-1458728164.sa-east-1.elb.amazonaws.com/plan-take-profit-requests/{id}/change-status-to-confirmed
+        delete: http://internal-crypfy-indexmanager-balancer-1458728164.sa-east-1.elb.amazonaws.com/plan-take-profit-requests/{id}
+server:
+  port: 8083
