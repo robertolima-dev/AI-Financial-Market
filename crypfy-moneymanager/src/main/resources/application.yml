@@ -1,0 +1,155 @@
+spring:
+  profiles.active: development
+
+---
+spring:
+  profiles: development
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:mysql://localhost:3306/crypfy-moneymanager
+    username: root
+    password:
+  kafka:
+    bootstrap-servers: localhost:9092,localhost:9093,localhost:9094
+    consumer:
+      group-id: deposit-brl-confirmation-email
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+app:
+  aws:
+    ses:
+      access-key: AKIAJSMMPWLWGUDAGZEQ
+      secret-key: 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
+  integrations:
+    rest:
+      slack:
+        webhook: https://hooks.slack.com/services/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
+      user:
+        get-info: http://localhost:8081/users/{email}
+        is-account-verified: http://localhost:8081/users/{email}/is-account-verified
+    topics:
+      deposit-brl:
+        change-status-to-confirmed: deposit-brl-change-status-to-confirmed
+        change-status-to-waiting-approval: deposit-brl-change-status-to-waiting-approval
+        change-status-to-cancelled: deposit-brl-change-status-to-cancelled
+        change-status-to-waiting-photo-upload: deposit-brl-change-status-to-waiting-photo-upload
+        change-status-to-denied: deposit-brl-change-status-to-denied
+      withdraw-brl:
+        change-status-to-confirmed: withdraw-brl-change-status-to-confirmed
+        change-status-to-waiting-approval: withdraw-brl-change-status-to-waiting-approval
+        change-status-to-cancelled: withdraw-brl-change-status-to-cancelled
+        change-status-to-processing: withdraw-brl-change-status-to-processing
+        change-status-to-denied: withdraw-brl-change-status-to-denied
+      auth:
+        add-brl-balance: auth-add-brl-balance
+  email:
+    no-reply-email: no-reply@crypfy.com
+server:
+  port: 8084
+
+---
+spring:
+  profiles: test
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:mysql://internal-crypfy-database-balancer-1991109529.sa-east-1.elb.amazonaws.com
+    username: root
+    password: 190650
+  kafka:
+    bootstrap-servers: localhost:9092,localhost:9093,localhost:9094
+    consumer:
+      group-id: deposit-brl-confirmation-email
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+app:
+  aws:
+    ses:
+      access-key: AKIAJSMMPWLWGUDAGZEQ
+      secret-key: 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
+  integrations:
+    rest:
+      slack:
+        webhook: https://hooks.slack.com/services/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
+      user:
+        get-info: http://localhost:8081/users/{email}
+        is-account-verified: http://localhost:8081/users/{email}/is-account-verified
+    topics:
+      deposit-brl:
+        change-status-to-confirmed: deposit-brl-change-status-to-confirmed
+        change-status-to-waiting-approval: deposit-brl-change-status-to-waiting-approval
+        change-status-to-cancelled: deposit-brl-change-status-to-cancelled
+        change-status-to-waiting-photo-upload: deposit-brl-change-status-to-waiting-photo-upload
+        change-status-to-denied: deposit-brl-change-status-to-denied
+      withdraw-brl:
+        change-status-to-confirmed: withdraw-brl-change-status-to-confirmed
+        change-status-to-waiting-approval: withdraw-brl-change-status-to-waiting-approval
+        change-status-to-cancelled: withdraw-brl-change-status-to-cancelled
+        change-status-to-processing: withdraw-brl-change-status-to-processing
+        change-status-to-denied: withdraw-brl-change-status-to-denied
+      auth:
+        add-brl-balance: auth-add-brl-balance
+  email:
+    no-reply-email: no-reply@crypfy.com
+server:
+  port: 8084
+
+---
+spring:
+  profiles: production
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:mysql://172.31.24.197/crypfy-auth
+    username: crypfy
+    password: 190650
+  kafka:
+    bootstrap-servers: 172.31.24.197:9092,172.31.24.197:9093,172.31.24.197:9094
+    consumer:
+      group-id: deposit-brl-change-status-to-confirmed
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+app:
+  aws:
+    ses:
+      access-key: AKIAJSMMPWLWGUDAGZEQ
+      secret-key: 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
+  integrations:
+    rest:
+      slack:
+        webhook: https://hooks.slack.com/services/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
+      user:
+        get-info: http://internal-crypfy-auth-balancer-1389197829.sa-east-1.elb.amazonaws.com/users/{email}
+        is-account-verified: http://internal-crypfy-auth-balancer-1389197829.sa-east-1.elb.amazonaws.com/users/{email}/is-account-verified
+    topics:
+      deposit-brl:
+        change-status-to-confirmed: deposit-brl-change-status-to-confirmed
+        change-status-to-waiting-approval: deposit-brl-change-status-to-waiting-approval
+        change-status-to-cancelled: deposit-brl-change-status-to-cancelled
+        change-status-to-waiting-photo-upload: deposit-brl-change-status-to-waiting-photo-upload
+        change-status-to-denied: deposit-brl-change-status-to-denied
+      withdraw-brl:
+        change-status-to-confirmed: withdraw-brl-change-status-to-confirmed
+        change-status-to-waiting-approval: withdraw-brl-change-status-to-waiting-approval
+        change-status-to-cancelled: withdraw-brl-change-status-to-cancelled
+        change-status-to-processing: withdraw-brl-change-status-to-processing
+        change-status-to-denied: withdraw-brl-change-status-to-denied
+      auth:
+        add-brl-balance: auth-add-brl-balance
+  email:
+    no-reply-email: no-reply@crypfy.com
+server:
+  port: 8084
