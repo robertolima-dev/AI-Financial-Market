@@ -1,0 +1,29 @@
+spring:
+  profiles.active: development
+
+---
+spring:
+  profiles: development
+  data:
+    mongodb:
+      database: clusters-db
+      uri: mongodb://localhost:27017
+  services:
+    coin-data:
+      coins: https://coin-data.crypfy.com/coins?sort=cap,desc&limit=
+      coin-history: https://coin-data.crypfy.com/candles?coinId={coinName}&timeFrame={timeFrame}&sort=date,{order}&limit=
+server:
+  port: 9001
+---
+spring:
+  profiles: production
+  data:
+    mongodb:
+      database: clusters-db
+      uri: mongodb://172.31.24.197:27017
+    services:
+      coin-data:
+        coins: https://coin-data.crypfy.com/coins?sort=cap,desc&limit=
+        coin-history: https://coin-data.crypfy.com/candles?coinId={coinName}&timeFrame={timeFrame}&sort=date,{order}&limit=
+server:
+  port: 9001
