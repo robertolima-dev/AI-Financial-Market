@@ -1,0 +1,80 @@
+spring:
+  profiles.active: development
+
+---
+spring:
+  profiles: development
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:mysql://localhost:3306/crypfy-indexmanager
+    username: root
+    password:
+  services:
+    auth:
+      get-info: http://localhost:8081/users/{email}
+      add-available-balance-brl: http://localhost:8081/users/{email}/add-available-balance-brl
+      is-account-verified: http://localhost:8081/users/{email}/is-account-verified
+  slack:
+    webhook: https://hooks.slack.com/services/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
+  aws:
+    ses:
+      access-key: AKIAJSMMPWLWGUDAGZEQ
+      secret-key: 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
+  email:
+    no-reply-email: no-reply@crypfy.com
+server:
+  port: 8085
+
+---
+spring:
+  profiles: test
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:mysql://internal-crypfy-database-balancer-1991109529.sa-east-1.elb.amazonaws.com
+    username: root
+    password: 190650
+  services:
+    auth:
+      get-info: http://localhost:8081/users/{email}
+      add-available-balance-brl: http://localhost:8081/users/{email}/add-available-balance-brl
+      is-account-verified: http://localhost:8081/users/{email}/is-account-verified
+  slack:
+    webhook: https://hooks.slack.com/services/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
+  aws:
+    ses:
+      access-key: AKIAJSMMPWLWGUDAGZEQ
+      secret-key: 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
+  email:
+    no-reply-email: no-reply@crypfy.com
+server:
+  port: 8085
+
+---
+spring:
+  profiles: production
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:mysql://172.31.24.197/crypfy-indexmanager
+    username: crypfy
+    password: 190650
+  services:
+    auth:
+      get-info: http://localhost:8081/users/{email}
+      add-available-balance-brl: http://localhost:8081/users/{email}/add-available-balance-brl
+      is-account-verified: http://localhost:8081/users/{email}/is-account-verified
+  slack:
+    webhook: https://hooks.slack.com/services/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
+  aws:
+    ses:
+      access-key: AKIAJSMMPWLWGUDAGZEQ
+      secret-key: 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
+  email:
+    no-reply-email: no-reply@crypfy.com
+server:
+  port: 8085

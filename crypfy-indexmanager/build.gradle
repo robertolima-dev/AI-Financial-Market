@@ -1,0 +1,77 @@
+group 'mali.com'
+version '2.1.4'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.6.RELEASE")
+        classpath("com.bmuschko:gradle-docker-plugin:3.2.1")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'com.bmuschko.docker-remote-api'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework:spring-web")
+    compile("com.fasterxml.jackson.core:jackson-databind")
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compile group: 'org.freemarker', name: 'freemarker', version: '2.3.20'
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-ses', version: '1.11.235'
+    compile 'mysql:mysql-connector-java'
+}
+
+import com.bmuschko.gradle.docker.tasks.image.Dockerfile
+import com.bmuschko.gradle.docker.tasks.image.DockerBuildImage
+
+task createDockerfile(type: Dockerfile) {
+    dependsOn build
+    destFile = project.file('./Dockerfile')
+    from 'openjdk:8-jdk-alpine'
+    maintainer 'Marcos Vinicius Meneses "marcos.vinicius@maliexchange.com"'
+    instruction 'ENV ACTIVE_PROFILE production'
+    volume '/tmp'
+    instruction 'COPY build/libs/crypfy-indexmanager-'+version+'.jar app.jar'
+
+    instruction 'EXPOSE 8083'
+    instruction 'CMD ["java","-jar","-Dspring.profiles.active=${ACTIVE_PROFILE}","app.jar" ]'
+}
+
+task buildImage(type: DockerBuildImage) {
+    dependsOn createDockerfile
+    inputDir = createDockerfile.destFile.parentFile
+    noCache = true
+    tag = '778467513455.dkr.ecr.sa-east-1.amazonaws.com/crypfy-indexmanager:'+version
+}
+
+task pushImageToECR() {
+    doLast {
+        def stdout = new ByteArrayOutputStream()
+        exec{
+            commandLine 'aws','ecr','get-login','--no-include-email','--region','sa-east-1'
+            standardOutput = stdout;
+        }
+        exec{
+            def commandLoginEcr = stdout.toString().split(' ')
+            commandLoginEcr[commandLoginEcr.length-1] = 'https://778467513455.dkr.ecr.sa-east-1.amazonaws.com'
+            commandLine commandLoginEcr
+        }
+        exec {
+            commandLine 'docker','push','778467513455.dkr.ecr.sa-east-1.amazonaws.com/crypfy-indexmanager:'+version
+        }
+    }
+}
