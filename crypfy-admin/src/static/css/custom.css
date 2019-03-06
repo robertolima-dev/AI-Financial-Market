@@ -1,0 +1,630 @@
+body{
+    /*font-family: 'Barlow', sans-serif;*/
+    font-family: 'Open Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color:#676767;
+    font-weight: 300;
+}
+
+.margin-top-10{
+    margin-top:10px;
+}
+
+.margin-top-20{
+    margin-top:20px;
+}
+
+.margin-top-30{
+    margin-top:30px;
+}
+
+.margin-top-40{
+    margin-top:40px;
+}
+
+.margin-top-50{
+    margin-top:50px;
+}
+
+.margin-top-70{
+    margin-top:70px;
+}
+
+.red {
+    color:#dc3545 !important;
+}
+
+.green {
+    color:green;
+}
+
+.block{
+    display: block;
+}
+
+.description {
+    font-size: 14px;
+    color:#999;
+}
+
+h1,h2,h3,h4,h5{
+    color:#444444;
+}
+
+strong{
+    font-weight: 700;
+}
+
+.full-absolute-wrapper{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow:auto;
+}
+
+
+
+.header-title .title{
+    font-size: 22px;
+    color:#444444;
+}
+
+.header-title small{
+    font-size: 13px;
+    color:#8e8e8e;
+    margin-left: 5px;
+}
+
+.header-title .line {
+    width: 40px;
+    height: 3px;
+    background:rgb(65, 111, 186);
+}
+
+
+/* LOGIN */
+.login-wrapper .extra-links {
+    text-align: center;
+    margin-top:40px;
+}
+
+.login-wrapper .extra-links a {
+    font-size: 15px;
+    color:#fff;
+    margin-right: 7px;
+
+}
+
+.login-wrapper .logo{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    margin-top:100px;
+}
+
+.login-box{
+    background: #fff;
+    width: 340px;
+    padding: 30px;
+    margin:0 auto;
+    margin-top:30px;
+    border-radius:4px;
+    box-shadow: 0px 0px 0px 12px rgba(0,0,0,.1);
+}
+
+/* LOGIN */
+
+/* SIGNUP */
+
+.signup-wrapper .signup-box{
+    background: #fff;
+    max-width: 500px;
+    min-width: 300px;
+    padding: 30px;
+    margin:0 auto;
+    margin-top:30px;
+    border-radius:4px;
+    box-shadow: 0px 0px 0px 12px rgba(0,0,0,.1);
+}
+
+.signup-wrapper .signup-message .first-message {
+    font-size: 35px;
+    color:#fff;
+    font-weight: 300;
+}
+
+.signup-wrapper .signup-message .second-message {
+    font-size: 22px;
+    font-weight: 300;
+    color:#fff;
+    line-height: 30px;
+}
+
+.signup-confirmation-box {
+    padding:0px 0 60px 0;
+}
+
+.signup-confirmation-box img{
+    width: 400px;
+}
+
+.signup-confirmation-box .title {
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.signup-confirmation-box .desc {
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 20px;
+    line-height: 25px;
+    color:#888;
+}
+
+.signup-confirmation-box a {
+    font-size: 13px;
+}
+
+/* EMAIL CONFIRMATION */
+
+.email-confirmation-wrapper .email-confirmation-box{
+    background: #fff;
+    width: 500px;
+    padding: 40px 30px 40px 30px;
+    margin:0 auto;
+    margin-top:30px;
+    border-radius:4px;
+    box-shadow: 0px 0px 0px 12px rgba(0,0,0,.1);
+}
+
+.email-confirmation-wrapper .logo {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 170px;
+    margin-top:100px;
+}
+
+.email-confirmation-wrapper .email-confirmation-box img{
+    width: 200px;
+}
+
+.email-confirmation-wrapper .email-confirmation-box .title {
+    font-size: 21px;
+    font-weight: 300;
+}
+
+.email-confirmation-wrapper .email-confirmation-box .desc {
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 20px;
+    line-height: 25px;
+    color:#888;
+}
+
+/* HEADER BASE TEMPLATE */
+
+.nav-top{
+    background:rgb(65, 111, 186);
+    color:#fff;
+    padding: 8px;
+}
+
+.header{
+    padding: 0px 20px 0px 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+
+.header .logo img {
+    width: 140px;
+}
+
+
+.header .menu a {
+    margin-right: 27px;
+    font-size: 18px;
+    color:#676767;
+}
+
+.header .menu a:hover {
+    text-decoration: none;
+}
+
+.header .menu li.active a {
+    font-weight: 700;
+    color:rgb(65, 111, 186);
+    padding-bottom: 17px;
+    border-bottom:3px solid rgb(65, 111, 186);
+}
+
+.header .balances .value {
+    font-size: 18px;
+
+}
+
+.widget{
+    padding: 20px;
+    /*border:1px solid #ccc;*/
+    background: #fff;
+    box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
+.widget .title h1{
+    font-size: 22px;
+    color:#444444;
+    display: inline;
+}
+
+
+.widget .title small{
+    font-size: 13px;
+    color:#8e8e8e;
+    margin-left: 5px;
+}
+
+.widget .title .line {
+    width: 40px;
+    height: 3px;
+    background:rgb(65, 111, 186);
+}
+
+.widget .body{
+    margin-top:30px;
+}
+
+/* balances stats */
+
+.balance-stats {
+    padding: 20px;
+    background: #fff;
+    border-radius: 3px;
+    /*border: 1px solid #ccc;*/
+    box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
+.balance-stats .title{
+    font-size: 15px;
+    font-weight: 300;
+    display: block;
+}
+
+.balance-stats .balance{
+    font-size: 30px;
+    top:-8px;
+    position: relative;
+}
+
+/* card plan */
+.card-plan {
+    padding: 20px;
+    /*border:1px solid #ccc;*/
+    border-radius: 2px;
+    background: #fff;
+    box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
+.card-plan .plan-name h1{
+    font-size: 22px;
+    color:#444444;
+    display: inline;
+}
+
+
+.card-plan .plan-name small{
+    font-size: 13px;
+    color:#8e8e8e;
+    margin-left: 5px;
+}
+
+.card-plan .plan-name .line {
+    width: 40px;
+    height: 3px;
+    background:#278578;
+}
+
+.card-plan .balance-title{
+    font-size: 15px;
+    font-weight: 300;
+    display: block;
+}
+
+.card-plan .currency {
+    font-size: 15px;
+    color:#7c7c7c;
+}
+
+.card-plan .balance-value {
+    font-size: 40px;
+    top:-8px;
+    position: relative;
+    color:#444444;
+}
+
+.card-plan  .desc {
+    font-size: 13px;
+}
+
+.card-plan .details {
+
+}
+
+.card-plan .details .item {
+
+}
+
+.card-plan .details .item .title{
+    font-size: 15px;
+    color:#7a7a7a;
+}
+
+.card-plan .details .item .title .lnr{
+    font-size: 16px;
+    color:#0c5460;
+    font-weight:700;
+}
+
+.card-plan .details .item .value{
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.balances{
+    position: relative;
+    bottom: 12px;
+}
+
+.balances .currency {
+    font-weight: 700;
+    font-size: 14px;
+    color:rgb(65, 111, 186);
+}
+
+.balances .balance-value {
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.form-group .required-symbol {
+    height: 6px;
+    width: 6px;
+    border-radius: 3px;
+    background:#416fba;
+    position: absolute;
+    right:28px;
+    top:53px;
+}
+
+.form-group label{
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 700;
+    color:#999;
+    letter-spacing: 1px;
+}
+
+
+
+
+/** bootstrap customization **/
+.form-control {
+    border-radius: 0px;
+    height: 50px !important;
+    -webkit-appearance: none;
+}
+
+.btn {
+    border-radius: 2px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-lg{
+    font-size: 0.7em;
+    font-weight: 700;
+    padding:.9rem 1rem;
+}
+
+
+.btn-primary{
+    color:#fff !important;
+}
+
+.btn-outline-primary{
+    color:#558B2F !important;
+}
+.btn-outline-primary:hover{
+    color:#fff !important;
+}
+
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+    border-color: #416fba;
+    box-shadow: none;
+    outline: 0 none;
+}
+
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+    font-size: 14px;
+}
+
+.is-invalid:focus{
+    box-shadow: none !important;
+    border-color: #dc3545 !important;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size: 14px;
+    color:#999;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    font-size: 14px;
+    color:#999;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    font-size: 14px;
+    color:#999;
+}
+:-moz-placeholder { /* Firefox 18- */
+    font-size: 14px;
+    color:#999;
+}
+
+.plan-item {
+    padding: 20px;
+    /*border:1px solid #ccc;*/
+    border-radius: 2px;
+    background: #fff;
+    box-shadow: 1px 2px 3px rgba(0,0,0,.5);
+}
+
+.plan-item .date-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color:#999;
+}
+
+.plan-item .date {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.plan-item .plan-name {
+    font-size: 18px;
+    display: block;
+}
+
+.plan-item label {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 700;
+    color:#999;
+    letter-spacing: 1px;
+}
+
+.plan-item .value {
+    font-size: 23px;
+    font-weight: 400;
+    display: block;
+}
+
+.plan-item .value .currency {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+
+.plan-status {
+    padding: 10px;
+    width: 130px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    border-radius: 2px;
+    font-size: 11px;
+}
+
+.generic-status {
+    padding: 13px;
+    width: 130px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    border-radius: 2px;
+    font-size:10px;
+    background:#ddd;
+    color:#2d4d81;
+}
+
+.plan-status.active {
+    background:#ddd;
+    color:#416fba;
+}
+
+.plan-status.pending {
+    background:#ddd;
+    color:#9b5a45;
+}
+
+.plan-status.finished {
+    background:#ddd;
+    color:#4d7047;
+}
+
+.table thead th {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    font-size: 11px;
+}
+
+
+.bank-account-option {
+    padding:10px;
+    display: inline;
+}
+
+.bank-account-option .value {
+    font-size: 14px;
+    margin-left:5px;
+}
+
+.bank-account-option img{
+    width: 30px;
+}
+
+.bank-account-value {
+    padding:0px 5px;
+    display: inline;
+}
+
+.bank-account-value .value {
+    font-size: 14px;
+    margin-left:5px;
+}
+
+.bank-account-value img{
+    width: 30px;
+}
+
+.form-separator{
+    width:100%;
+    height:1px;
+    background:#ced4da;
+    margin-top:30px;
+}
