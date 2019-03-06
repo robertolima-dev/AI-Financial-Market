@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: net.gpedro.integrations.slack:slack-webhook:1.1.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.gpedro.integrations.slack/slack-webhook/1.1.1/65836fd3e59e8e313e5991325094d8f8c45093ec/slack-webhook-1.1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.gpedro.integrations.slack/slack-webhook/1.1.1/899896610db020c8a458aef0c7c8a128e44116ce/slack-webhook-1.1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

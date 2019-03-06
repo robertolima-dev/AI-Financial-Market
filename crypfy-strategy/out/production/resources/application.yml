@@ -1,0 +1,25 @@
+spring:
+  profiles.active: development
+
+---
+spring:
+  profiles: development
+  jpa:
+    hibernate:
+      ddl-auto:
+  datasource:
+    url: jdbc:mysql://localhost:3306/crypfy-strategy
+    username: root
+    password: root
+server:
+  port: 8092
+---
+spring:
+  profiles: production
+  jpa:
+    hibernate:
+      ddl-auto: create
+  datasource:
+    url: jdbc:mysql://localhost:3306/crypfy-strategy
+    username: root
+    password: root
